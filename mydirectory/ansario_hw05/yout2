@@ -1,0 +1,155 @@
+Sets are
+[ a b c d ][ b e ][ a b e f g ][ b e ][ b c d ][ u ][ f g h i ]
+
+Test set equality
+[ a b c d ]          equals? [ a b c d ]          true
+[ a b c d ]          equals? [ b e ]              false
+[ a b c d ]          equals? [ a b e f g ]        false
+[ a b c d ]          equals? [ b e ]              false
+[ a b c d ]          equals? [ b c d ]            false
+[ a b c d ]          equals? [ u ]                false
+[ a b c d ]          equals? [ f g h i ]          false
+[ b e ]              equals? [ a b c d ]          false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ a b e f g ]        false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ b c d ]            false
+[ b e ]              equals? [ u ]                false
+[ b e ]              equals? [ f g h i ]          false
+[ a b e f g ]        equals? [ a b c d ]          false
+[ a b e f g ]        equals? [ b e ]              false
+[ a b e f g ]        equals? [ a b e f g ]        true
+[ a b e f g ]        equals? [ b e ]              false
+[ a b e f g ]        equals? [ b c d ]            false
+[ a b e f g ]        equals? [ u ]                false
+[ a b e f g ]        equals? [ f g h i ]          false
+[ b e ]              equals? [ a b c d ]          false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ a b e f g ]        false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ b c d ]            false
+[ b e ]              equals? [ u ]                false
+[ b e ]              equals? [ f g h i ]          false
+[ b c d ]            equals? [ a b c d ]          false
+[ b c d ]            equals? [ b e ]              false
+[ b c d ]            equals? [ a b e f g ]        false
+[ b c d ]            equals? [ b e ]              false
+[ b c d ]            equals? [ b c d ]            true
+[ b c d ]            equals? [ u ]                false
+[ b c d ]            equals? [ f g h i ]          false
+[ u ]                equals? [ a b c d ]          false
+[ u ]                equals? [ b e ]              false
+[ u ]                equals? [ a b e f g ]        false
+[ u ]                equals? [ b e ]              false
+[ u ]                equals? [ b c d ]            false
+[ u ]                equals? [ u ]                true
+[ u ]                equals? [ f g h i ]          false
+[ f g h i ]          equals? [ a b c d ]          false
+[ f g h i ]          equals? [ b e ]              false
+[ f g h i ]          equals? [ a b e f g ]        false
+[ f g h i ]          equals? [ b e ]              false
+[ f g h i ]          equals? [ b c d ]            false
+[ f g h i ]          equals? [ u ]                false
+[ f g h i ]          equals? [ f g h i ]          true
+
+Test set equality with overloading
+[ a b c d ]          ==? [ a b c d ]          true
+[ a b c d ]          ==? [ b e ]              false
+[ a b c d ]          ==? [ a b e f g ]        false
+[ a b c d ]          ==? [ b e ]              false
+[ a b c d ]          ==? [ b c d ]            false
+[ a b c d ]          ==? [ u ]                false
+[ a b c d ]          ==? [ f g h i ]          false
+[ b e ]              ==? [ a b c d ]          false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ a b e f g ]        false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ u ]                false
+[ b e ]              ==? [ f g h i ]          false
+[ a b e f g ]        ==? [ a b c d ]          false
+[ a b e f g ]        ==? [ b e ]              false
+[ a b e f g ]        ==? [ a b e f g ]        true
+[ a b e f g ]        ==? [ b e ]              false
+[ a b e f g ]        ==? [ b c d ]            false
+[ a b e f g ]        ==? [ u ]                false
+[ a b e f g ]        ==? [ f g h i ]          false
+[ b e ]              ==? [ a b c d ]          false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ a b e f g ]        false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ u ]                false
+[ b e ]              ==? [ f g h i ]          false
+[ b c d ]            ==? [ a b c d ]          false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ a b e f g ]        false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b c d ]            true
+[ b c d ]            ==? [ u ]                false
+[ b c d ]            ==? [ f g h i ]          false
+[ u ]                ==? [ a b c d ]          false
+[ u ]                ==? [ b e ]              false
+[ u ]                ==? [ a b e f g ]        false
+[ u ]                ==? [ b e ]              false
+[ u ]                ==? [ b c d ]            false
+[ u ]                ==? [ u ]                true
+[ u ]                ==? [ f g h i ]          false
+[ f g h i ]          ==? [ a b c d ]          false
+[ f g h i ]          ==? [ b e ]              false
+[ f g h i ]          ==? [ a b e f g ]        false
+[ f g h i ]          ==? [ b e ]              false
+[ f g h i ]          ==? [ b c d ]            false
+[ f g h i ]          ==? [ u ]                false
+[ f g h i ]          ==? [ f g h i ]          true
+
+Test set equality with overloading
+[ b c d ]            ==? [ b c d ]            true
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b c d ]            true
+[ b c d ]            ==? [ u ]                false
+[ b c d ]            ==? [ f g h i ]          false
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ u ]                false
+[ b e ]              ==? [ f g h i ]          false
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ u ]                false
+[ b e ]              ==? [ f g h i ]          false
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b e ]              true
+[ b e ]              ==? [ b c d ]            false
+[ b e ]              ==? [ u ]                false
+[ b e ]              ==? [ f g h i ]          false
+[ b c d ]            ==? [ b c d ]            true
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b e ]              false
+[ b c d ]            ==? [ b c d ]            true
+[ b c d ]            ==? [ u ]                false
+[ b c d ]            ==? [ f g h i ]          false
+[ u ]                ==? [ b c d ]            false
+[ u ]                ==? [ b e ]              false
+[ u ]                ==? [ b e ]              false
+[ u ]                ==? [ b e ]              false
+[ u ]                ==? [ b c d ]            false
+[ u ]                ==? [ u ]                true
+[ u ]                ==? [ f g h i ]          false
+[ f g h i ]          ==? [ b c d ]            false
+[ f g h i ]          ==? [ b e ]              false
+[ f g h i ]          ==? [ b e ]              false
+[ f g h i ]          ==? [ b e ]              false
+[ f g h i ]          ==? [ b c d ]            false
+[ f g h i ]          ==? [ u ]                false
+[ f g h i ]          ==? [ f g h i ]          true

@@ -1,0 +1,304 @@
+Sets are
+[ a b c d ][ b e ][ a b e f g ][ b e ][ b c d ][ u ][ f g h i ]
+
+Test set containment
+[ a b c d ]          contains? [ a b c d ]          true
+[ a b c d ]          contains? [ b e ]              false
+[ a b c d ]          contains? [ a b e f g ]        false
+[ a b c d ]          contains? [ b e ]              false
+[ a b c d ]          contains? [ b c d ]            true
+[ a b c d ]          contains? [ u ]                false
+[ a b c d ]          contains? [ f g h i ]          false
+[ b e ]              contains? [ a b c d ]          false
+[ b e ]              contains? [ b e ]              true
+[ b e ]              contains? [ a b e f g ]        false
+[ b e ]              contains? [ b e ]              true
+[ b e ]              contains? [ b c d ]            false
+[ b e ]              contains? [ u ]                false
+[ b e ]              contains? [ f g h i ]          false
+[ a b e f g ]        contains? [ a b c d ]          false
+[ a b e f g ]        contains? [ b e ]              true
+[ a b e f g ]        contains? [ a b e f g ]        true
+[ a b e f g ]        contains? [ b e ]              true
+[ a b e f g ]        contains? [ b c d ]            false
+[ a b e f g ]        contains? [ u ]                false
+[ a b e f g ]        contains? [ f g h i ]          false
+[ b e ]              contains? [ a b c d ]          false
+[ b e ]              contains? [ b e ]              true
+[ b e ]              contains? [ a b e f g ]        false
+[ b e ]              contains? [ b e ]              true
+[ b e ]              contains? [ b c d ]            false
+[ b e ]              contains? [ u ]                false
+[ b e ]              contains? [ f g h i ]          false
+[ b c d ]            contains? [ a b c d ]          false
+[ b c d ]            contains? [ b e ]              false
+[ b c d ]            contains? [ a b e f g ]        false
+[ b c d ]            contains? [ b e ]              false
+[ b c d ]            contains? [ b c d ]            true
+[ b c d ]            contains? [ u ]                false
+[ b c d ]            contains? [ f g h i ]          false
+[ u ]                contains? [ a b c d ]          false
+[ u ]                contains? [ b e ]              false
+[ u ]                contains? [ a b e f g ]        false
+[ u ]                contains? [ b e ]              false
+[ u ]                contains? [ b c d ]            false
+[ u ]                contains? [ u ]                true
+[ u ]                contains? [ f g h i ]          false
+[ f g h i ]          contains? [ a b c d ]          false
+[ f g h i ]          contains? [ b e ]              false
+[ f g h i ]          contains? [ a b e f g ]        false
+[ f g h i ]          contains? [ b e ]              false
+[ f g h i ]          contains? [ b c d ]            false
+[ f g h i ]          contains? [ u ]                false
+[ f g h i ]          contains? [ f g h i ]          true
+
+Test set containment with overloading
+[ a b c d ] contains? [ a b c d ] true
+[ a b c d ] contains? [ b e ] false
+[ a b c d ] contains? [ a b e f g ] false
+[ a b c d ] contains? [ b e ] false
+[ a b c d ] contains? [ b c d ] true
+[ a b c d ] contains? [ u ] false
+[ a b c d ] contains? [ f g h i ] false
+[ b e ] contains? [ a b c d ] false
+[ b e ] contains? [ b e ] true
+[ b e ] contains? [ a b e f g ] false
+[ b e ] contains? [ b e ] true
+[ b e ] contains? [ b c d ] false
+[ b e ] contains? [ u ] false
+[ b e ] contains? [ f g h i ] false
+[ a b e f g ] contains? [ a b c d ] false
+[ a b e f g ] contains? [ b e ] true
+[ a b e f g ] contains? [ a b e f g ] true
+[ a b e f g ] contains? [ b e ] true
+[ a b e f g ] contains? [ b c d ] false
+[ a b e f g ] contains? [ u ] false
+[ a b e f g ] contains? [ f g h i ] false
+[ b e ] contains? [ a b c d ] false
+[ b e ] contains? [ b e ] true
+[ b e ] contains? [ a b e f g ] false
+[ b e ] contains? [ b e ] true
+[ b e ] contains? [ b c d ] false
+[ b e ] contains? [ u ] false
+[ b e ] contains? [ f g h i ] false
+[ b c d ] contains? [ a b c d ] false
+[ b c d ] contains? [ b e ] false
+[ b c d ] contains? [ a b e f g ] false
+[ b c d ] contains? [ b e ] false
+[ b c d ] contains? [ b c d ] true
+[ b c d ] contains? [ u ] false
+[ b c d ] contains? [ f g h i ] false
+[ u ] contains? [ a b c d ] false
+[ u ] contains? [ b e ] false
+[ u ] contains? [ a b e f g ] false
+[ u ] contains? [ b e ] false
+[ u ] contains? [ b c d ] false
+[ u ] contains? [ u ] true
+[ u ] contains? [ f g h i ] false
+[ f g h i ] contains? [ a b c d ] false
+[ f g h i ] contains? [ b e ] false
+[ f g h i ] contains? [ a b e f g ] false
+[ f g h i ] contains? [ b e ] false
+[ f g h i ] contains? [ b c d ] false
+[ f g h i ] contains? [ u ] false
+[ f g h i ] contains? [ f g h i ] true
+
+Test set equals
+[ a b c d ]          equals? [ a b c d ]          true
+[ a b c d ]          equals? [ b e ]              false
+[ a b c d ]          equals? [ a b e f g ]        false
+[ a b c d ]          equals? [ b e ]              false
+[ a b c d ]          equals? [ b c d ]            false
+[ a b c d ]          equals? [ u ]                false
+[ a b c d ]          equals? [ f g h i ]          false
+[ b e ]              equals? [ a b c d ]          false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ a b e f g ]        false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ b c d ]            false
+[ b e ]              equals? [ u ]                false
+[ b e ]              equals? [ f g h i ]          false
+[ a b e f g ]        equals? [ a b c d ]          false
+[ a b e f g ]        equals? [ b e ]              false
+[ a b e f g ]        equals? [ a b e f g ]        true
+[ a b e f g ]        equals? [ b e ]              false
+[ a b e f g ]        equals? [ b c d ]            false
+[ a b e f g ]        equals? [ u ]                false
+[ a b e f g ]        equals? [ f g h i ]          false
+[ b e ]              equals? [ a b c d ]          false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ a b e f g ]        false
+[ b e ]              equals? [ b e ]              true
+[ b e ]              equals? [ b c d ]            false
+[ b e ]              equals? [ u ]                false
+[ b e ]              equals? [ f g h i ]          false
+[ b c d ]            equals? [ a b c d ]          false
+[ b c d ]            equals? [ b e ]              false
+[ b c d ]            equals? [ a b e f g ]        false
+[ b c d ]            equals? [ b e ]              false
+[ b c d ]            equals? [ b c d ]            true
+[ b c d ]            equals? [ u ]                false
+[ b c d ]            equals? [ f g h i ]          false
+[ u ]                equals? [ a b c d ]          false
+[ u ]                equals? [ b e ]              false
+[ u ]                equals? [ a b e f g ]        false
+[ u ]                equals? [ b e ]              false
+[ u ]                equals? [ b c d ]            false
+[ u ]                equals? [ u ]                true
+[ u ]                equals? [ f g h i ]          false
+[ f g h i ]          equals? [ a b c d ]          false
+[ f g h i ]          equals? [ b e ]              false
+[ f g h i ]          equals? [ a b e f g ]        false
+[ f g h i ]          equals? [ b e ]              false
+[ f g h i ]          equals? [ b c d ]            false
+[ f g h i ]          equals? [ u ]                false
+[ f g h i ]          equals? [ f g h i ]          true
+Test element containment
+
+[ a b c d ]          containsElt? a     true
+[ a b c d ]          containsElt? b     true
+[ a b c d ]          containsElt? c     true
+[ a b c d ]          containsElt? d     true
+[ a b c d ]          containsElt? b     true
+[ a b c d ]          containsElt? e     false
+[ a b c d ]          containsElt? a     true
+[ a b c d ]          containsElt? b     true
+[ a b c d ]          containsElt? e     false
+[ a b c d ]          containsElt? f     false
+[ a b c d ]          containsElt? g     false
+[ a b c d ]          containsElt? b     true
+[ a b c d ]          containsElt? e     false
+[ a b c d ]          containsElt? b     true
+[ a b c d ]          containsElt? c     true
+[ a b c d ]          containsElt? d     true
+[ a b c d ]          containsElt? u     false
+[ a b c d ]          containsElt? f     false
+[ a b c d ]          containsElt? g     false
+[ a b c d ]          containsElt? h     false
+[ a b c d ]          containsElt? i     false
+[ b e ]              containsElt? a     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? c     false
+[ b e ]              containsElt? d     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? a     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? f     false
+[ b e ]              containsElt? g     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? c     false
+[ b e ]              containsElt? d     false
+[ b e ]              containsElt? u     false
+[ b e ]              containsElt? f     false
+[ b e ]              containsElt? g     false
+[ b e ]              containsElt? h     false
+[ b e ]              containsElt? i     false
+[ a b e f g ]        containsElt? a     true
+[ a b e f g ]        containsElt? b     true
+[ a b e f g ]        containsElt? c     false
+[ a b e f g ]        containsElt? d     false
+[ a b e f g ]        containsElt? b     true
+[ a b e f g ]        containsElt? e     true
+[ a b e f g ]        containsElt? a     true
+[ a b e f g ]        containsElt? b     true
+[ a b e f g ]        containsElt? e     true
+[ a b e f g ]        containsElt? f     true
+[ a b e f g ]        containsElt? g     true
+[ a b e f g ]        containsElt? b     true
+[ a b e f g ]        containsElt? e     true
+[ a b e f g ]        containsElt? b     true
+[ a b e f g ]        containsElt? c     false
+[ a b e f g ]        containsElt? d     false
+[ a b e f g ]        containsElt? u     false
+[ a b e f g ]        containsElt? f     true
+[ a b e f g ]        containsElt? g     true
+[ a b e f g ]        containsElt? h     false
+[ a b e f g ]        containsElt? i     false
+[ b e ]              containsElt? a     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? c     false
+[ b e ]              containsElt? d     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? a     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? f     false
+[ b e ]              containsElt? g     false
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? e     true
+[ b e ]              containsElt? b     true
+[ b e ]              containsElt? c     false
+[ b e ]              containsElt? d     false
+[ b e ]              containsElt? u     false
+[ b e ]              containsElt? f     false
+[ b e ]              containsElt? g     false
+[ b e ]              containsElt? h     false
+[ b e ]              containsElt? i     false
+[ b c d ]            containsElt? a     false
+[ b c d ]            containsElt? b     true
+[ b c d ]            containsElt? c     true
+[ b c d ]            containsElt? d     true
+[ b c d ]            containsElt? b     true
+[ b c d ]            containsElt? e     false
+[ b c d ]            containsElt? a     false
+[ b c d ]            containsElt? b     true
+[ b c d ]            containsElt? e     false
+[ b c d ]            containsElt? f     false
+[ b c d ]            containsElt? g     false
+[ b c d ]            containsElt? b     true
+[ b c d ]            containsElt? e     false
+[ b c d ]            containsElt? b     true
+[ b c d ]            containsElt? c     true
+[ b c d ]            containsElt? d     true
+[ b c d ]            containsElt? u     false
+[ b c d ]            containsElt? f     false
+[ b c d ]            containsElt? g     false
+[ b c d ]            containsElt? h     false
+[ b c d ]            containsElt? i     false
+[ u ]                containsElt? a     false
+[ u ]                containsElt? b     false
+[ u ]                containsElt? c     false
+[ u ]                containsElt? d     false
+[ u ]                containsElt? b     false
+[ u ]                containsElt? e     false
+[ u ]                containsElt? a     false
+[ u ]                containsElt? b     false
+[ u ]                containsElt? e     false
+[ u ]                containsElt? f     false
+[ u ]                containsElt? g     false
+[ u ]                containsElt? b     false
+[ u ]                containsElt? e     false
+[ u ]                containsElt? b     false
+[ u ]                containsElt? c     false
+[ u ]                containsElt? d     false
+[ u ]                containsElt? u     true
+[ u ]                containsElt? f     false
+[ u ]                containsElt? g     false
+[ u ]                containsElt? h     false
+[ u ]                containsElt? i     false
+[ f g h i ]          containsElt? a     false
+[ f g h i ]          containsElt? b     false
+[ f g h i ]          containsElt? c     false
+[ f g h i ]          containsElt? d     false
+[ f g h i ]          containsElt? b     false
+[ f g h i ]          containsElt? e     false
+[ f g h i ]          containsElt? a     false
+[ f g h i ]          containsElt? b     false
+[ f g h i ]          containsElt? e     false
+[ f g h i ]          containsElt? f     true
+[ f g h i ]          containsElt? g     true
+[ f g h i ]          containsElt? b     false
+[ f g h i ]          containsElt? e     false
+[ f g h i ]          containsElt? b     false
+[ f g h i ]          containsElt? c     false
+[ f g h i ]          containsElt? d     false
+[ f g h i ]          containsElt? u     false
+[ f g h i ]          containsElt? f     true
+[ f g h i ]          containsElt? g     true
+[ f g h i ]          containsElt? h     true
+[ f g h i ]          containsElt? i     true

@@ -1,0 +1,5 @@
+Main: Beginning execution
+Main: infile  'zdata.txt'
+Main: outfile 'zzout'
+Main: logfile 'zzlog'
+Main: Ending execution

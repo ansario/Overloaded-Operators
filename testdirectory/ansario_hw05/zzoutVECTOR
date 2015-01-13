@@ -1,0 +1,285 @@
+Sets are
+
+[ b e ]
+[ a b e f g ]
+[ b e ]
+[ b c d ]
+[ u ]
+[ a b c d ]
+[ a b c d p q r s t ]
+[ p q r s t u v w x ]
+
+
+Test set containment
+[ b e ]                  contains? [ b e ]                  true  true  true 
+[ b e ]                  contains? [ a b e f g ]            false false false
+[ b e ]                  contains? [ b e ]                  true  true  true 
+[ b e ]                  contains? [ b c d ]                false false false
+[ b e ]                  contains? [ u ]                    false false false
+[ b e ]                  contains? [ a b c d ]              false false false
+[ b e ]                  contains? [ a b c d p q r s t ]    false false false
+[ b e ]                  contains? [ p q r s t u v w x ]    false false false
+[ a b e f g ]            contains? [ b e ]                  true  true  true 
+[ a b e f g ]            contains? [ a b e f g ]            true  true  true 
+[ a b e f g ]            contains? [ b e ]                  true  true  true 
+[ a b e f g ]            contains? [ b c d ]                false false false
+[ a b e f g ]            contains? [ u ]                    false false false
+[ a b e f g ]            contains? [ a b c d ]              false false false
+[ a b e f g ]            contains? [ a b c d p q r s t ]    false false false
+[ a b e f g ]            contains? [ p q r s t u v w x ]    false false false
+[ b e ]                  contains? [ b e ]                  true  true  true 
+[ b e ]                  contains? [ a b e f g ]            false false false
+[ b e ]                  contains? [ b e ]                  true  true  true 
+[ b e ]                  contains? [ b c d ]                false false false
+[ b e ]                  contains? [ u ]                    false false false
+[ b e ]                  contains? [ a b c d ]              false false false
+[ b e ]                  contains? [ a b c d p q r s t ]    false false false
+[ b e ]                  contains? [ p q r s t u v w x ]    false false false
+[ b c d ]                contains? [ b e ]                  false false false
+[ b c d ]                contains? [ a b e f g ]            false false false
+[ b c d ]                contains? [ b e ]                  false false false
+[ b c d ]                contains? [ b c d ]                true  true  true 
+[ b c d ]                contains? [ u ]                    false false false
+[ b c d ]                contains? [ a b c d ]              false false false
+[ b c d ]                contains? [ a b c d p q r s t ]    false false false
+[ b c d ]                contains? [ p q r s t u v w x ]    false false false
+[ u ]                    contains? [ b e ]                  false false false
+[ u ]                    contains? [ a b e f g ]            false false false
+[ u ]                    contains? [ b e ]                  false false false
+[ u ]                    contains? [ b c d ]                false false false
+[ u ]                    contains? [ u ]                    true  true  true 
+[ u ]                    contains? [ a b c d ]              false false false
+[ u ]                    contains? [ a b c d p q r s t ]    false false false
+[ u ]                    contains? [ p q r s t u v w x ]    false false false
+[ a b c d ]              contains? [ b e ]                  false false false
+[ a b c d ]              contains? [ a b e f g ]            false false false
+[ a b c d ]              contains? [ b e ]                  false false false
+[ a b c d ]              contains? [ b c d ]                true  true  true 
+[ a b c d ]              contains? [ u ]                    false false false
+[ a b c d ]              contains? [ a b c d ]              true  true  true 
+[ a b c d ]              contains? [ a b c d p q r s t ]    false false false
+[ a b c d ]              contains? [ p q r s t u v w x ]    false false false
+[ a b c d p q r s t ]    contains? [ b e ]                  false false false
+[ a b c d p q r s t ]    contains? [ a b e f g ]            false false false
+[ a b c d p q r s t ]    contains? [ b e ]                  false false false
+[ a b c d p q r s t ]    contains? [ b c d ]                true  true  true 
+[ a b c d p q r s t ]    contains? [ u ]                    false false false
+[ a b c d p q r s t ]    contains? [ a b c d ]              true  true  true 
+[ a b c d p q r s t ]    contains? [ a b c d p q r s t ]    true  true  true 
+[ a b c d p q r s t ]    contains? [ p q r s t u v w x ]    false false false
+[ p q r s t u v w x ]    contains? [ b e ]                  false false false
+[ p q r s t u v w x ]    contains? [ a b e f g ]            false false false
+[ p q r s t u v w x ]    contains? [ b e ]                  false false false
+[ p q r s t u v w x ]    contains? [ b c d ]                false false false
+[ p q r s t u v w x ]    contains? [ u ]                    true  true  true 
+[ p q r s t u v w x ]    contains? [ a b c d ]              false false false
+[ p q r s t u v w x ]    contains? [ a b c d p q r s t ]    false false false
+[ p q r s t u v w x ]    contains? [ p q r s t u v w x ]    true  true  true 
+
+Test set is contained in
+[ b e ]                  is cont in? [ b e ]                  true  true  true 
+[ b e ]                  is cont in? [ a b e f g ]            true  true  true 
+[ b e ]                  is cont in? [ b e ]                  true  true  true 
+[ b e ]                  is cont in? [ b c d ]                false false false
+[ b e ]                  is cont in? [ u ]                    false false false
+[ b e ]                  is cont in? [ a b c d ]              false false false
+[ b e ]                  is cont in? [ a b c d p q r s t ]    false false false
+[ b e ]                  is cont in? [ p q r s t u v w x ]    false false false
+[ a b e f g ]            is cont in? [ b e ]                  false false false
+[ a b e f g ]            is cont in? [ a b e f g ]            true  true  true 
+[ a b e f g ]            is cont in? [ b e ]                  false false false
+[ a b e f g ]            is cont in? [ b c d ]                false false false
+[ a b e f g ]            is cont in? [ u ]                    false false false
+[ a b e f g ]            is cont in? [ a b c d ]              false false false
+[ a b e f g ]            is cont in? [ a b c d p q r s t ]    false false false
+[ a b e f g ]            is cont in? [ p q r s t u v w x ]    false false false
+[ b e ]                  is cont in? [ b e ]                  true  true  true 
+[ b e ]                  is cont in? [ a b e f g ]            true  true  true 
+[ b e ]                  is cont in? [ b e ]                  true  true  true 
+[ b e ]                  is cont in? [ b c d ]                false false false
+[ b e ]                  is cont in? [ u ]                    false false false
+[ b e ]                  is cont in? [ a b c d ]              false false false
+[ b e ]                  is cont in? [ a b c d p q r s t ]    false false false
+[ b e ]                  is cont in? [ p q r s t u v w x ]    false false false
+[ b c d ]                is cont in? [ b e ]                  false false false
+[ b c d ]                is cont in? [ a b e f g ]            false false false
+[ b c d ]                is cont in? [ b e ]                  false false false
+[ b c d ]                is cont in? [ b c d ]                true  true  true 
+[ b c d ]                is cont in? [ u ]                    false false false
+[ b c d ]                is cont in? [ a b c d ]              true  true  true 
+[ b c d ]                is cont in? [ a b c d p q r s t ]    true  true  true 
+[ b c d ]                is cont in? [ p q r s t u v w x ]    false false false
+[ u ]                    is cont in? [ b e ]                  false false false
+[ u ]                    is cont in? [ a b e f g ]            false false false
+[ u ]                    is cont in? [ b e ]                  false false false
+[ u ]                    is cont in? [ b c d ]                false false false
+[ u ]                    is cont in? [ u ]                    true  true  true 
+[ u ]                    is cont in? [ a b c d ]              false false false
+[ u ]                    is cont in? [ a b c d p q r s t ]    false false false
+[ u ]                    is cont in? [ p q r s t u v w x ]    true  true  true 
+[ a b c d ]              is cont in? [ b e ]                  false false false
+[ a b c d ]              is cont in? [ a b e f g ]            false false false
+[ a b c d ]              is cont in? [ b e ]                  false false false
+[ a b c d ]              is cont in? [ b c d ]                false false false
+[ a b c d ]              is cont in? [ u ]                    false false false
+[ a b c d ]              is cont in? [ a b c d ]              true  true  true 
+[ a b c d ]              is cont in? [ a b c d p q r s t ]    true  true  true 
+[ a b c d ]              is cont in? [ p q r s t u v w x ]    false false false
+[ a b c d p q r s t ]    is cont in? [ b e ]                  false false false
+[ a b c d p q r s t ]    is cont in? [ a b e f g ]            false false false
+[ a b c d p q r s t ]    is cont in? [ b e ]                  false false false
+[ a b c d p q r s t ]    is cont in? [ b c d ]                false false false
+[ a b c d p q r s t ]    is cont in? [ u ]                    false false false
+[ a b c d p q r s t ]    is cont in? [ a b c d ]              false false false
+[ a b c d p q r s t ]    is cont in? [ a b c d p q r s t ]    true  true  true 
+[ a b c d p q r s t ]    is cont in? [ p q r s t u v w x ]    false false false
+[ p q r s t u v w x ]    is cont in? [ b e ]                  false false false
+[ p q r s t u v w x ]    is cont in? [ a b e f g ]            false false false
+[ p q r s t u v w x ]    is cont in? [ b e ]                  false false false
+[ p q r s t u v w x ]    is cont in? [ b c d ]                false false false
+[ p q r s t u v w x ]    is cont in? [ u ]                    false false false
+[ p q r s t u v w x ]    is cont in? [ a b c d ]              false false false
+[ p q r s t u v w x ]    is cont in? [ a b c d p q r s t ]    false false false
+[ p q r s t u v w x ]    is cont in? [ p q r s t u v w x ]    true  true  true 
+
+Test set equality
+[ b e ]                  equals? [ b e ]                  true  true  true 
+[ b e ]                  equals? [ a b e f g ]            false false false
+[ b e ]                  equals? [ b e ]                  true  true  true 
+[ b e ]                  equals? [ b c d ]                false false false
+[ b e ]                  equals? [ u ]                    false false false
+[ b e ]                  equals? [ a b c d ]              false false false
+[ b e ]                  equals? [ a b c d p q r s t ]    false false false
+[ b e ]                  equals? [ p q r s t u v w x ]    false false false
+[ a b e f g ]            equals? [ b e ]                  false false false
+[ a b e f g ]            equals? [ a b e f g ]            true  true  true 
+[ a b e f g ]            equals? [ b e ]                  false false false
+[ a b e f g ]            equals? [ b c d ]                false false false
+[ a b e f g ]            equals? [ u ]                    false false false
+[ a b e f g ]            equals? [ a b c d ]              false false false
+[ a b e f g ]            equals? [ a b c d p q r s t ]    false false false
+[ a b e f g ]            equals? [ p q r s t u v w x ]    false false false
+[ b e ]                  equals? [ b e ]                  true  true  true 
+[ b e ]                  equals? [ a b e f g ]            false false false
+[ b e ]                  equals? [ b e ]                  true  true  true 
+[ b e ]                  equals? [ b c d ]                false false false
+[ b e ]                  equals? [ u ]                    false false false
+[ b e ]                  equals? [ a b c d ]              false false false
+[ b e ]                  equals? [ a b c d p q r s t ]    false false false
+[ b e ]                  equals? [ p q r s t u v w x ]    false false false
+[ b c d ]                equals? [ b e ]                  false false false
+[ b c d ]                equals? [ a b e f g ]            false false false
+[ b c d ]                equals? [ b e ]                  false false false
+[ b c d ]                equals? [ b c d ]                true  true  true 
+[ b c d ]                equals? [ u ]                    false false false
+[ b c d ]                equals? [ a b c d ]              false false false
+[ b c d ]                equals? [ a b c d p q r s t ]    false false false
+[ b c d ]                equals? [ p q r s t u v w x ]    false false false
+[ u ]                    equals? [ b e ]                  false false false
+[ u ]                    equals? [ a b e f g ]            false false false
+[ u ]                    equals? [ b e ]                  false false false
+[ u ]                    equals? [ b c d ]                false false false
+[ u ]                    equals? [ u ]                    true  true  true 
+[ u ]                    equals? [ a b c d ]              false false false
+[ u ]                    equals? [ a b c d p q r s t ]    false false false
+[ u ]                    equals? [ p q r s t u v w x ]    false false false
+[ a b c d ]              equals? [ b e ]                  false false false
+[ a b c d ]              equals? [ a b e f g ]            false false false
+[ a b c d ]              equals? [ b e ]                  false false false
+[ a b c d ]              equals? [ b c d ]                false false false
+[ a b c d ]              equals? [ u ]                    false false false
+[ a b c d ]              equals? [ a b c d ]              true  true  true 
+[ a b c d ]              equals? [ a b c d p q r s t ]    false false false
+[ a b c d ]              equals? [ p q r s t u v w x ]    false false false
+[ a b c d p q r s t ]    equals? [ b e ]                  false false false
+[ a b c d p q r s t ]    equals? [ a b e f g ]            false false false
+[ a b c d p q r s t ]    equals? [ b e ]                  false false false
+[ a b c d p q r s t ]    equals? [ b c d ]                false false false
+[ a b c d p q r s t ]    equals? [ u ]                    false false false
+[ a b c d p q r s t ]    equals? [ a b c d ]              false false false
+[ a b c d p q r s t ]    equals? [ a b c d p q r s t ]    true  true  true 
+[ a b c d p q r s t ]    equals? [ p q r s t u v w x ]    false false false
+[ p q r s t u v w x ]    equals? [ b e ]                  false false false
+[ p q r s t u v w x ]    equals? [ a b e f g ]            false false false
+[ p q r s t u v w x ]    equals? [ b e ]                  false false false
+[ p q r s t u v w x ]    equals? [ b c d ]                false false false
+[ p q r s t u v w x ]    equals? [ u ]                    false false false
+[ p q r s t u v w x ]    equals? [ a b c d ]              false false false
+[ p q r s t u v w x ]    equals? [ a b c d p q r s t ]    false false false
+[ p q r s t u v w x ]    equals? [ p q r s t u v w x ]    true  true  true 
+
+[ ]                      empty equals? [ ]                      true  true  true 
+Test element containment
+
+[ b e ]                  containsElt? b     true  true  true 
+[ b e ]                  containsElt? e     true  true  true 
+[ a b e f g ]            containsElt? a     true  true  true 
+[ a b e f g ]            containsElt? b     true  true  true 
+[ a b e f g ]            containsElt? e     true  true  true 
+[ a b e f g ]            containsElt? f     true  true  true 
+[ a b e f g ]            containsElt? g     true  true  true 
+[ b e ]                  containsElt? b     true  true  true 
+[ b e ]                  containsElt? e     true  true  true 
+[ b c d ]                containsElt? b     true  true  true 
+[ b c d ]                containsElt? c     true  true  true 
+[ b c d ]                containsElt? d     true  true  true 
+[ u ]                    containsElt? u     true  true  true 
+[ a b c d ]              containsElt? a     true  true  true 
+[ a b c d ]              containsElt? b     true  true  true 
+[ a b c d ]              containsElt? c     true  true  true 
+[ a b c d ]              containsElt? d     true  true  true 
+[ a b c d p q r s t ]    containsElt? a     true  true  true 
+[ a b c d p q r s t ]    containsElt? b     true  true  true 
+[ a b c d p q r s t ]    containsElt? c     true  true  true 
+[ a b c d p q r s t ]    containsElt? d     true  true  true 
+[ a b c d p q r s t ]    containsElt? p     true  true  true 
+[ a b c d p q r s t ]    containsElt? q     true  true  true 
+[ a b c d p q r s t ]    containsElt? r     true  true  true 
+[ a b c d p q r s t ]    containsElt? s     true  true  true 
+[ a b c d p q r s t ]    containsElt? t     true  true  true 
+[ p q r s t u v w x ]    containsElt? p     true  true  true 
+[ p q r s t u v w x ]    containsElt? q     true  true  true 
+[ p q r s t u v w x ]    containsElt? r     true  true  true 
+[ p q r s t u v w x ]    containsElt? s     true  true  true 
+[ p q r s t u v w x ]    containsElt? t     true  true  true 
+[ p q r s t u v w x ]    containsElt? u     true  true  true 
+[ p q r s t u v w x ]    containsElt? v     true  true  true 
+[ p q r s t u v w x ]    containsElt? w     true  true  true 
+[ p q r s t u v w x ]    containsElt? x     true  true  true 
+Test element remove and add
+
+[ b e ]                  removeAddElt b     true  true  true 
+[ e b ]                  removeAddElt e     true  true  true 
+[ a b e f g ]            removeAddElt a     true  true  true 
+[ b e f g a ]            removeAddElt b     true  true  true 
+[ e f g a b ]            removeAddElt e     true  true  true 
+[ f g a b e ]            removeAddElt f     true  true  true 
+[ g a b e f ]            removeAddElt g     true  true  true 
+[ b e ]                  removeAddElt b     true  true  true 
+[ e b ]                  removeAddElt e     true  true  true 
+[ b c d ]                removeAddElt b     true  true  true 
+[ c d b ]                removeAddElt c     true  true  true 
+[ d b c ]                removeAddElt d     true  true  true 
+[ u ]                    removeAddElt u     true  true  true 
+[ a b c d ]              removeAddElt a     true  true  true 
+[ b c d a ]              removeAddElt b     true  true  true 
+[ c d a b ]              removeAddElt c     true  true  true 
+[ d a b c ]              removeAddElt d     true  true  true 
+[ a b c d p q r s t ]    removeAddElt a     true  true  true 
+[ b c d p q r s t a ]    removeAddElt b     true  true  true 
+[ c d p q r s t a b ]    removeAddElt c     true  true  true 
+[ d p q r s t a b c ]    removeAddElt d     true  true  true 
+[ p q r s t a b c d ]    removeAddElt p     true  true  true 
+[ q r s t a b c d p ]    removeAddElt q     true  true  true 
+[ r s t a b c d p q ]    removeAddElt r     true  true  true 
+[ s t a b c d p q r ]    removeAddElt s     true  true  true 
+[ t a b c d p q r s ]    removeAddElt t     true  true  true 
+[ p q r s t u v w x ]    removeAddElt p     true  true  true 
+[ q r s t u v w x p ]    removeAddElt q     true  true  true 
+[ r s t u v w x p q ]    removeAddElt r     true  true  true 
+[ s t u v w x p q r ]    removeAddElt s     true  true  true 
+[ t u v w x p q r s ]    removeAddElt t     true  true  true 
+[ u v w x p q r s t ]    removeAddElt u     true  true  true 
+[ v w x p q r s t u ]    removeAddElt v     true  true  true 
+[ w x p q r s t u v ]    removeAddElt w     true  true  true 
+[ x p q r s t u v w ]    removeAddElt x     true  true  true 

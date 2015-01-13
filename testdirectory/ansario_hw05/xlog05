@@ -1,0 +1,5 @@
+Main: Beginning execution
+Main: infile  '../../zdatatest.txt'
+Main: outfile 'xout05'
+Main: logfile 'xlog05'
+Main: Ending execution
